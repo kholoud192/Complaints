@@ -1,0 +1,88 @@
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+  
+h2 {
+    font-size: 24px;
+    text-align: center;
+    color: #004aad;
+}
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  input, textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: border-color 0.3s;
+  }
+  
+  input:focus, textarea:focus {
+    border-color: #004aad;
+    outline: none;
+  }
+  
+  textarea {
+    resize: none;
+    height: 100px;
+  }
+  
+
+  
+
+  .success {
+    color: green;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  input.ng-touched.ng-invalid,
+  textarea.ng-touched.ng-invalid {
+    border: 1px solid red;
+  }
+  
+  .btn {
+    display: block;
+    width: 100%;
+    background-color: #004aad;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .btn:hover {
+    background-color: #003080;
+  }
+  
+  .btn:disabled {
+    background-color: rgb(30, 129, 241);
+    cursor: not-allowed;
+  }
+  

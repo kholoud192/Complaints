@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="container">
+  <h2>Submit Your Complaint</h2>
+
+  <form [formGroup]="complaintForm" (ngSubmit)="submitComplaint()">
+    
+    <label>Full Name</label>
+    <input type="text" formControlName="fullName">
+    <div class="error" *ngIf="complaintForm.get('fullName')?.touched && complaintForm.get('fullName')?.invalid">
+      <small *ngIf="complaintForm.get('fullName')?.errors?.['required']">Full Name is required</small>
+      <small *ngIf="complaintForm.get('fullName')?.errors?.['minlength']">Must be at least 3 characters</small>
+    </div>
+
+    <label>Phone</label>
+    <input type="text" formControlName="phone">
+    <div class="error" *ngIf="complaintForm.get('phone')?.touched && complaintForm.get('phone')?.invalid">
+      <small *ngIf="complaintForm.get('phone')?.errors?.['required']">Phone number is required</small>
+      <small *ngIf="complaintForm.get('phone')?.errors?.['pattern']">Enter a valid phone number (10-15 digits)</small>
+    </div>
+
+    <label>Email</label>
+    <input type="email" formControlName="email">
+    <div class="error" *ngIf="complaintForm.get('email')?.touched && complaintForm.get('email')?.invalid">
+      <small *ngIf="complaintForm.get('email')?.errors?.['required']">Email is required</small>
+      <small *ngIf="complaintForm.get('email')?.errors?.['email']">Enter a valid email</small>
+    </div>
+
+    <label>Complaint Details</label>
+    <textarea formControlName="details"></textarea>
+    <div class="error" *ngIf="complaintForm.get('details')?.touched && complaintForm.get('details')?.invalid">
+      <small *ngIf="complaintForm.get('details')?.errors?.['required']">Complaint details are required</small>
+      <small *ngIf="complaintForm.get('details')?.errors?.['minlength']">Must be at least 10 characters</small>
+    </div>
+
+    <button type="submit" [disabled]="complaintForm.invalid || isSubmitting" class="btn">
+      {{ isSubmitting ? 'Submitting...' : 'Submit' }}
+    </button>
+  </form>
+</div>
